@@ -23,7 +23,11 @@ namespace MVC_Assignment_2.Controllers
             //return result;
 
             //OR
-            return Content($"Hello From Home(Index) Page for ContentResult.", "text/html");
+            //return Content($"Hello From Home(Index) Page for ContentResult.", "text/html");
+            //_____________________//
+            //View
+            //View/Home/Index.cshtml
+            return View();
         }
         public IActionResult update()  //RedirectResult
         {
