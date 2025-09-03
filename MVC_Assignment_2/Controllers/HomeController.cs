@@ -12,16 +12,18 @@ namespace MVC_Assignment_2.Controllers
         //    return $"Hello From Home(Index) Page. {name}";
         //}
 
-        // ContentResult
         public IActionResult Index()  //ContentResult
         {
-            var result = new ContentResult();
-            result.Content = $"Hello From Home(Index) Page for ContentResult.";
-            result.ContentType = "text/html";
-            //result.StatusCode = 200;
-            //result.StatusCode = StatusCodes.Status200OK;
-            result.StatusCode = (int)HttpStatusCode.OK;
-            return result;
+            //var result = new ContentResult();
+            //result.Content = $"Hello From Home(Index) Page for ContentResult.";
+            //result.ContentType = "text/html";
+            ////result.StatusCode = 200;
+            ////result.StatusCode = StatusCodes.Status200OK;
+            //result.StatusCode = (int)HttpStatusCode.OK;
+            //return result;
+
+            //OR
+            return Content($"Hello From Home(Index) Page for ContentResult.", "text/html");
         }
         public IActionResult update()  //RedirectResult
         {
@@ -30,8 +32,10 @@ namespace MVC_Assignment_2.Controllers
         }
         public IActionResult update2()  //RedirectToActionResult
         {
-            var result = new RedirectToActionResult(nameof(ProductsController.Get), "Products", new {id = 20});
-            return result;
+            //var result = new RedirectToActionResult(nameof(ProductsController.Get), "Products", new {id = 20});
+            //return result;
+            //OR
+            return RedirectToAction(nameof(ProductsController.Get), "Products", new { id = 20 });
         }
     }
 }
