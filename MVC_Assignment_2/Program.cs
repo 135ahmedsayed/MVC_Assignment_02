@@ -11,7 +11,7 @@ namespace MVC_Assignment_2
             //end points
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{Controller}/{action}/{id:required?}");
+                pattern: "{Controller}/{action}");
 
             app.Run();
         }

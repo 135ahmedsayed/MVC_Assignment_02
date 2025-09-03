@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MVC_Assignment_2.Controllers
 {
@@ -6,9 +7,31 @@ namespace MVC_Assignment_2.Controllers
     {
         //Get /Baseurl/home/index
         [HttpGet]
-        public string Index(string name)
+        //public string Index(string name)
+        //{
+        //    return $"Hello From Home(Index) Page. {name}";
+        //}
+
+        // ContentResult
+        public IActionResult Index()  //ContentResult
         {
-            return $"Hello From Home(Index) Page. {name}";
+            var result = new ContentResult();
+            result.Content = $"Hello From Home(Index) Page for ContentResult.";
+            result.ContentType = "text/html";
+            //result.StatusCode = 200;
+            //result.StatusCode = StatusCodes.Status200OK;
+            result.StatusCode = (int)HttpStatusCode.OK;
+            return result;
+        }
+        public IActionResult update()  //RedirectResult
+        {
+            var result = new RedirectResult("https://www.google.com/");
+            return result;
+        }
+        public IActionResult update2()  //RedirectToActionResult
+        {
+            var result = new RedirectToActionResult(nameof(ProductsController.Get), "Products", new {id = 20});
+            return result;
         }
     }
 }
