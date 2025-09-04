@@ -29,6 +29,11 @@ namespace MVC_Assignment_2.Controllers
             //View/Home/Index.cshtml
             return View();
         }
+        [HttpGet]
+        public IActionResult Privacy()
+        {
+            return View();
+        }
         public IActionResult update()  //RedirectResult
         {
             var result = new RedirectResult("https://www.google.com/");

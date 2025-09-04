@@ -12,7 +12,7 @@ namespace MVC_Assignment_2
             //end points
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{Controller}/{action}");
+                pattern: "{Controller=home}/{action=index}");
 
             app.Run();
         }

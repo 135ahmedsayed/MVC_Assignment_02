@@ -4,9 +4,9 @@ namespace MVC_Assignment_2.Controllers
 {
     public class ProductsController : Controller
     {
-        public string Get(int id)
+        public IActionResult Get()
         {
-            return $"Welcom {id} ";
+            return View();
         }
     }
 }
