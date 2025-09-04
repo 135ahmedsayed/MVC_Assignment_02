@@ -12,7 +12,7 @@ namespace MVC_Assignment_2.Controllers
         //    return $"Hello From Home(Index) Page. {name}";
         //}
 
-        public IActionResult Index()  //ContentResult
+        public IActionResult Index(int id , string name)  //ContentResult
         {
             //var result = new ContentResult();
             //result.Content = $"Hello From Home(Index) Page for ContentResult.";

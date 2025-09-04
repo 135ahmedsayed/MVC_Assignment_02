@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    // var p = Products()
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -11,6 +14,10 @@
     @*Header*@
     <Center>
         <div>
+            @*@HTMLHELPER*@
+			@* @Html.ActionLink("Home", "Index", "Home", new {id =21 , name = "Ahmed"}, new { @class = "btn btn-primary" }) *@
+            @* TagHelper *@
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Home" asp-route-id="222" asp-route-name="Ahewhfek">Home</a>
             <a class="btn btn-primary" href="/home/index">Home</a>
             <a class="btn btn-primary" href="/home/privacy">Privacy</a>
             <a class="btn btn-primary" href="/home/About">About</a>
