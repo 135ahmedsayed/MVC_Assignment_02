@@ -5,9 +5,14 @@ namespace MVC_Assignment_2
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //builder.Services.AddControllers(); // Add services to add Controller : API
+            builder.Services.AddControllersWithViews(); // Add services to add Controller : MVC
             var app = builder.Build();
-
-            app.MapGet("/", () => "Hello World!");
+            app.UseStaticFiles(); //wwwroot
+            //end points
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{Controller=home}/{action=index}");
 
             app.Run();
         }

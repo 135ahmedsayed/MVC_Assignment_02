@@ -1,0 +1,36 @@
+﻿@{
+    // var p = Products()
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+	<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    @*Header*@
+    <Center>
+        <div>
+            @*@HTMLHELPER*@
+			@* @Html.ActionLink("Home", "Index", "Home", new {id =21 , name = "Ahmed"}, new { @class = "btn btn-primary" }) *@
+            @* TagHelper *@
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Home" asp-route-id="222" asp-route-name="Ahewhfek">Home</a>
+            <a class="btn btn-primary" href="/home/index">Home</a>
+            <a class="btn btn-primary" href="/home/privacy">Privacy</a>
+            <a class="btn btn-primary" href="/home/About">About</a>
+            <a class="btn btn-primary" href="/home/ContactUS">ContactUS</a>
+            <a class="btn btn-primary" href="/products/get">Products</a>
+        </div>
+        </div>
+    </Center>
+    @*Header*@
+    <div>
+        @RenderBody()
+    </div>
+    @*Footer*@
+    @*Footer*@
+</body>
+</html>
